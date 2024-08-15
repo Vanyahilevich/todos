@@ -2,15 +2,24 @@ import { FC, memo } from 'react';
 import styled from 'styled-components';
 
 const Filters = styled.div`
+  @media (max-width: 410px) {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
   button {
-    border: none;
-    background: none;
-    font-size: 14px;
     cursor: pointer;
     padding: 5px 10px;
     color: #888;
     border: 1px solid #eee;
 
+    &:first-child {
+      padding-left: 0px;
+    }
+    &:last-child {
+      padding-right: 0px;
+    }
     &:hover {
       text-decoration: underline;
     }

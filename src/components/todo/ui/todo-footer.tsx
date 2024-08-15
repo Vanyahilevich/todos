@@ -6,9 +6,16 @@ import TodoFilter from './todo-filter/todo-filter';
 const Footer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 14px;
   color: #888;
   margin-top: auto;
+
+  @media (max-width: 410px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
 `;
 
 type TodoFilterProps = {

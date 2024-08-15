@@ -22,6 +22,14 @@ const Container = styled.div`
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+
+  @media (max-width: 500px) {
+    max-height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+  }
 `;
 
 export function Todo() {

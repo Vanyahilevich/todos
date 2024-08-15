@@ -9,6 +9,7 @@ const TodoListStyled = styled.ul`
   display: flex;
   flex-direction: column;
 
+
   #nothingToDo {
     text-align: center;
     padding: 10px;
