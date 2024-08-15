@@ -16,6 +16,10 @@ const Footer = styled.div`
     align-items: flex-start;
     gap: 5px;
   }
+
+  span {
+    margin-left: 5px;
+  }
 `;
 
 type TodoFilterProps = {

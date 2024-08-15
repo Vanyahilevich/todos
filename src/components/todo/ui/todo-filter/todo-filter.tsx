@@ -14,9 +14,6 @@ const Filters = styled.div`
     color: #888;
     border: 1px solid #eee;
 
-    &:first-child {
-      padding-left: 0px;
-    }
     &:last-child {
       padding-right: 0px;
     }
