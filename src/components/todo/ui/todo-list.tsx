@@ -1,13 +1,29 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const TodoListStyled = styled.ul`
-  list-style-type: none;
+  flex: 1;
   padding: 0;
   overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  #nothingToDo {
+    text-align: center;
+    padding: 10px;
+  }s
 `;
 
-const TodoList: React.FC<{ children: React.ReactNode }> = (props) => {
-  return <TodoListStyled>{props.children}</TodoListStyled>;
+const TodoList = ({ children }: { children: React.ReactNode[] }) => {
+  if (children.length === 0) {
+    return (
+      <TodoListStyled>
+        <div id="nothingToDo">Nothing to do</div>
+      </TodoListStyled>
+    );
+  }
+  return <TodoListStyled>{children}</TodoListStyled>;
 };
 
 export default TodoList;

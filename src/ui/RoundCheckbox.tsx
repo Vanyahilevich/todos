@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const RoundCheckboxStyled = styled.input.attrs({ type: 'checkbox' })`
-  width: 24px;
-  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
   border-radius: 50%;
   appearance: none;
   border: 2px solid #ccc;
