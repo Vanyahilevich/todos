@@ -58,10 +58,10 @@ export function Todo() {
     return true;
   });
   const addTodo = useCallback((task: string) => {
-    dispatch({ type: TODO_STATE_ACTIONS.ADD_TODO, payload: task });
+    dispatch({ type: TODO_STATE_ACTIONS.ADD_TODO, payload: { task } });
   }, []);
   const toggleTodo = useCallback((id: number) => {
-    dispatch({ type: TODO_STATE_ACTIONS.TOGGLE_TODO, payload: id });
+    dispatch({ type: TODO_STATE_ACTIONS.TOGGLE_TODO, payload: { id: id } });
   }, []);
   const deleteCompletedTodos = useCallback(() => {
     dispatch({ type: TODO_STATE_ACTIONS.DELETE_COMPLETED_TODOS });
