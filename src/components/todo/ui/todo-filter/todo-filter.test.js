@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import TodoFilter from './todo-filter';
 
@@ -8,7 +9,7 @@ describe('TodoFilter', () => {
   const showActiveTodosMock = jest.fn();
   const showCompletedTodosMock = jest.fn();
 
-  const setup = (filter: "all" | "active" | "completed") => {
+  const setup = (filter) => {
     render(
       <TodoFilter
         filter={filter}
@@ -24,7 +25,7 @@ describe('TodoFilter', () => {
     jest.clearAllMocks();
   });
 
-  it('should render all filter buttons', () => {
+  test('should render all filter buttons', () => {
     setup('all');
 
     expect(screen.getByText('All')).toBeInTheDocument();
@@ -33,28 +34,28 @@ describe('TodoFilter', () => {
     expect(screen.getByText('Clear completed')).toBeInTheDocument();
   });
 
-
-  it('should call showAllTodos when "All" is clicked', () => {
+  
+  test('should call showAllTodos when "All" is clicked', () => {
     setup('active');
-    fireEvent.click(screen.getByText('All'));
+    userEvent.click(screen.getByText('All'));
     expect(showAllTodosMock).toHaveBeenCalledTimes(1);
   });
 
-  it('should call showActiveTodos when "Active" is clicked', () => {
+  test('should call showActiveTodos when "Active" is clicked', () => {
     setup('all');
-    fireEvent.click(screen.getByText('Active'));
+    userEvent.click(screen.getByText('Active'));
     expect(showActiveTodosMock).toHaveBeenCalledTimes(1);
   });
 
-  it('should call showCompletedTodos when "Completed" is clicked', () => {
+  test('should call showCompletedTodos when "Completed" is clicked', () => {
     setup('all');
-    fireEvent.click(screen.getByText('Completed'));
+    userEvent.click(screen.getByText('Completed'));
     expect(showCompletedTodosMock).toHaveBeenCalledTimes(1);
   });
 
-  it('should call deleteCompletedTodos when "Clear completed" is clicked', () => {
+  test('should call deleteCompletedTodos when "Clear completed" is clicked', () => {
     setup('completed');
-    fireEvent.click(screen.getByText('Clear completed'));
+    userEvent.click(screen.getByText('Clear completed'));
     expect(deleteCompletedTodosMock).toHaveBeenCalledTimes(1);
   });
 });
