@@ -5,7 +5,8 @@ import { memo } from 'react';
 
 const TodoItemStyled = styled.li<{ completed: boolean }>`
   display: flex;
-  align-items: center;
+  align-items: start;
+
   min-height: 40px;
   padding: 10px 10px;
   border-bottom: 1px solid #eee;

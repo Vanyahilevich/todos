@@ -1,5 +1,5 @@
+import { capitalizeFirstWord } from "../../../utils/capitalizeFirstWord";
 import { Todo, TodoListType } from "../types";
-import { capitalizeFirstWord } from "./capitalizeFirstWord";
 
 export const TODO_STATE_ACTIONS = {
   ADD_TODO: "add-todo",
