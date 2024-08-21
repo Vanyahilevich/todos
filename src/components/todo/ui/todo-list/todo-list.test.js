@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import TodoList from "./todo-list"
-import TodoItem from '../todo-item';
+import TodoItem from '../todo-item/todo-item';
 
 describe('TodoList Component', () => {
     const todos = [

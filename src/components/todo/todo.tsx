@@ -1,7 +1,7 @@
 import { useCallback, useReducer, useState } from 'react';
 import styled from 'styled-components';
 import TodoList from './ui/todo-list/todo-list';
-import TodoItem from './ui/todo-item';
+import TodoItem from './ui/todo-item/todo-item';
 import TodoHeader from './ui/todo-header';
 import TodoInput from './ui/todo-input/todo-input';
 import {

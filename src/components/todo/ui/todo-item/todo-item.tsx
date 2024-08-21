@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Todo } from '../types';
-import RoundCheckbox from '../../../ui/RoundCheckbox';
+import { Todo } from '../../types';
+import RoundCheckbox from '../../../../ui/RoundCheckbox';
 import { memo } from 'react';
 
 const TodoItemStyled = styled.li<{ completed: boolean }>`
@@ -21,12 +21,12 @@ const TodoItemStyled = styled.li<{ completed: boolean }>`
     color: ${(props) => (props.completed ? '#ccc' : 'black')};
   }
 `;
+
 type TodoItemProps = Todo & {
   toggleTodo: (id: number) => void;
 };
 const TodoItem: React.FC<TodoItemProps> = memo(
   ({ id, task, completed, toggleTodo }) => {
-    console.log('TodoItem', id);
     return (
       <TodoItemStyled completed={completed}>
         <RoundCheckbox
